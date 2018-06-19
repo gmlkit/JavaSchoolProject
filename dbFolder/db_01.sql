@@ -1,0 +1,98 @@
+/*
+Created		19-Jun-18
+Modified		19-Jun-18
+Project		
+Model			
+Company		
+Author		
+Version		
+Database		PostgreSQL 8.1 
+*/
+
+
+/* Create Domains */
+
+
+/* Create Tables */
+
+
+Create table Ucitelji
+(
+	id Serial NOT NULL,
+	userLogin Varchar(99) NOT NULL,
+	password Varchar(900) NOT NULL,
+ primary key (id)
+) Without Oids;
+
+
+Create table Ucenci
+(
+	id Serial NOT NULL,
+	stars_id Integer NOT NULL,
+	ime Varchar(99) NOT NULL,
+	priimek Varchar(20) NOT NULL,
+ primary key (id)
+) Without Oids;
+
+
+Create table Predmeti
+(
+	id Serial NOT NULL,
+	ime Varchar(20) NOT NULL,
+ primary key (id)
+) Without Oids;
+
+
+Create table Ucenci_Predmeti
+(
+	id Serial NOT NULL,
+	ucenec_id Integer NOT NULL,
+	predmet_id Integer NOT NULL,
+	ocena Integer NOT NULL,
+ primary key (id)
+) Without Oids;
+
+
+Create table Ucitelji_Predmeti
+(
+	id Serial NOT NULL,
+	ucitelj_id Integer NOT NULL,
+	predmet_id Integer NOT NULL,
+ primary key (id)
+) Without Oids;
+
+
+Create table Starsi
+(
+	id Serial NOT NULL,
+	userLogin Varchar(99) NOT NULL,
+	password Varchar(99) NOT NULL,
+ primary key (id)
+) Without Oids;
+
+
+/* Create Tab 'Others' for Selected Tables */
+
+
+/* Create Indexes */
+
+
+/* Create Foreign Keys */
+
+Alter table Ucitelji_Predmeti add  foreign key (ucitelj_id) references Ucitelji (id) on update restrict on delete restrict;
+
+Alter table Ucenci_Predmeti add  foreign key (ucenec_id) references Ucenci (id) on update restrict on delete restrict;
+
+Alter table Ucenci_Predmeti add  foreign key (predmet_id) references Predmeti (id) on update restrict on delete restrict;
+
+Alter table Ucitelji_Predmeti add  foreign key (predmet_id) references Predmeti (id) on update restrict on delete restrict;
+
+Alter table Ucenci add  foreign key (stars_id) references Starsi (id) on update restrict on delete restrict;
+
+
+/* Create Referential Integrity Triggers */
+
+
+/* Create User-Defined Triggers */
+
+
