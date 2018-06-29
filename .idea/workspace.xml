@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7472ed2d-1ee6-4cc2-8c75-876dace7dc53" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Logic/DatabaseWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Logic/DatabaseWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/TeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/TeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eAsistentMini/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eAsistentMini/teacherMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/teacherMain.fxml" afterDir="false" />
     </list>
@@ -93,8 +84,8 @@
       <file leaf-file-name="TeacherController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eAsistentMini/TeacherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="373">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#addButtonPressed#0;class#TeacherController#0" />
@@ -362,12 +353,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530257864207</updated>
-      <workItem from="1530257865644" duration="29457000" />
+      <workItem from="1530257865644" duration="31133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29457000" />
+    <option name="totallyTimeSpent" value="31133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -622,8 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eAsistentMini/TeacherController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="373">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addButtonPressed#0;class#TeacherController#0" />

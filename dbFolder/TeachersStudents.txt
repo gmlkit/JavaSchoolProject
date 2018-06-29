@@ -1,0 +1,6 @@
+SELECT DISTINCT(u.*)FROM ucenci u 
+INNER JOIN ucenci_predmeti u_p ON u_p.ucenec_id=u.id 
+INNER JOIN predmeti pr ON pr.id=u_p.predmet_id
+INNER JOIN ucitelji_predmeti up ON up.predmet_id=pr.id
+INNER JOIN ucitelji uc ON uc.id=up.ucitelj_id
+WHERE(uc.email='test')
