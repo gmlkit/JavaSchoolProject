@@ -19,27 +19,27 @@ public class Main extends Application {
 
         window=primaryStage;
 //        Parent login = FXMLLoader.load(getClass().getResource("login.fxml"));
-        selectedStage(ActiveSceene,window);
+        selectedStage(ActiveSceene,0);
         window.setTitle("Login");
         window.show();
 
 
     }
-    public void selectedStage(int selectedSceene,Stage stage) throws IOException {
+    public void selectedStage(int selectedScene,int userid) throws IOException {
         Parent login = FXMLLoader.load(getClass().getResource("login.fxml"));
         Parent admin= FXMLLoader.load(getClass().getResource("admin.fxml"));
         Parent teacherMain= FXMLLoader.load(getClass().getResource("teacherMain.fxml"));
         Parent userMain= FXMLLoader.load(getClass().getResource("userMain.fxml"));
-        if(selectedSceene==0){
-            stage.setScene(new Scene(admin));
+        if(selectedScene==0){
+            window.setScene(new Scene(admin));
         }else
-            if(selectedSceene==1){
-            stage.setScene(new Scene(teacherMain));
+            if(selectedScene==1){
+            window.setScene(new Scene(teacherMain));
         }else
-            if(selectedSceene==2){
-            stage.setScene(new Scene(userMain));
+            if(selectedScene==2){
+            window.setScene(new Scene(userMain));
         }else{
-                stage.setScene(new Scene(login));
+                window.setScene(new Scene(login));
             }
 
     }

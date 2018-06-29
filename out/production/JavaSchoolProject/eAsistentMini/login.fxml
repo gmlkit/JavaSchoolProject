@@ -24,7 +24,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="logMeIn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#handleButtonClick1" prefHeight="55.0" prefWidth="290.0" text="eAsistentMini" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="logMeIn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#handleButtonClick1" prefHeight="55.0" prefWidth="290.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="registerConn" alignment="TOP_RIGHT" layoutX="260.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleButtonClick2" prefHeight="55.0" prefWidth="283.0" text="Register" GridPane.rowIndex="2" />
             <Label alignment="CENTER_RIGHT" text="Username" wrapText="true" />
             <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="26.0" text="Password" wrapText="true" GridPane.rowIndex="1" />

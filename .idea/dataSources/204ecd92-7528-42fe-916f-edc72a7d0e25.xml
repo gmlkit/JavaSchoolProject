@@ -28,8 +28,12 @@
     </database>
     <role id="8" parent="1" name="SchoolProjectJava">
       <ObjectId>33212</ObjectId>
+      <SuperRole>1</SuperRole>
       <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
       <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
       <ConnectionLimit>-1</ConnectionLimit>
     </role>
     <role id="9" parent="1" name="meinF">
@@ -93,8 +97,8 @@
     <schema id="21" parent="3" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-06-29.10:39:09.294</IntrospectionTimestamp>
-      <IntrospectionStateNumber>739</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-06-29.17:12:01.920</IntrospectionTimestamp>
+      <IntrospectionStateNumber>762</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -224,7 +228,11 @@
       <ObjectId>33142</ObjectId>
       <StateNumber>721</StateNumber>
     </table>
-    <routine id="42" parent="21" name="add_class">
+    <view id="42" parent="21" name="usersview">
+      <ObjectId>33215</ObjectId>
+      <StateNumber>759</StateNumber>
+    </view>
+    <routine id="43" parent="21" name="add_class">
       <ObjectId>33190</ObjectId>
       <StateNumber>733</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -234,7 +242,7 @@
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="43" parent="21" name="add_grade">
+    <routine id="44" parent="21" name="add_grade">
       <ObjectId>33211</ObjectId>
       <StateNumber>739</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -244,7 +252,7 @@
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="44" parent="21" name="add_parrent">
+    <routine id="45" parent="21" name="add_parrent">
       <ObjectId>33186</ObjectId>
       <StateNumber>728</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -254,7 +262,7 @@
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="45" parent="21" name="add_student">
+    <routine id="46" parent="21" name="add_student">
       <ObjectId>33189</ObjectId>
       <StateNumber>732</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -264,27 +272,47 @@
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="46" parent="21" name="add_teacher">
-      <ObjectId>33188</ObjectId>
-      <StateNumber>731</StateNumber>
+    <routine id="47" parent="21" name="add_teacher">
+      <ObjectId>33214</ObjectId>
+      <StateNumber>758</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
-      <ArgumentsDefinition>in_userlogin character varying, in_pass1 character varying, in_pass2 character varying, in_classroom integer</ArgumentsDefinition>
+      <ArgumentsDefinition>in_email character varying, in_pass1 character varying, in_pass2 character varying, in_classroom integer</ArgumentsDefinition>
       <ResultsDefinition>integer</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <routine id="47" parent="21" name="login">
-      <ObjectId>33185</ObjectId>
-      <StateNumber>729</StateNumber>
+    <routine id="48" parent="21" name="getparrent">
+      <ObjectId>33221</ObjectId>
+      <StateNumber>762</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
-      <ArgumentsDefinition>&quot;_userLogin&quot; character varying, _password character varying</ArgumentsDefinition>
+      <ArgumentsDefinition>in_email character varying</ArgumentsDefinition>
       <ResultsDefinition>integer</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
       <Cost>100.0</Cost>
     </routine>
-    <column id="48" parent="35" name="id">
+    <routine id="49" parent="21" name="getteacher">
+      <ObjectId>33220</ObjectId>
+      <StateNumber>761</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_email character varying</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="50" parent="21" name="login">
+      <ObjectId>33213</ObjectId>
+      <StateNumber>756</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_email character varying, in_password character varying</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <column id="51" parent="35" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -293,44 +321,44 @@
       <TypeId>23</TypeId>
       <SequenceName>ocene_id_seq</SequenceName>
     </column>
-    <column id="49" parent="35" name="ocena">
+    <column id="52" parent="35" name="ocena">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>735</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="50" parent="35" name="opisna_ocena">
+    <column id="53" parent="35" name="opisna_ocena">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>735</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="51" parent="35" name="ucenec_predmet_id">
+    <column id="54" parent="35" name="ucenec_predmet_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>735</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="52" parent="35" name="opis_ocene">
+    <column id="55" parent="35" name="opis_ocene">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>736</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="53" parent="35" name="ocene_pkey">
+    <index id="56" parent="35" name="ocene_pkey">
       <ObjectId>33202</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="54" parent="35" name="ocene_pkey">
+    <key id="57" parent="35" name="ocene_pkey">
       <ObjectId>33203</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>ocene_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="55" parent="35" name="ucenec_predmet_id">
+    <foreign-key id="58" parent="35" name="ucenec_predmet_id">
       <ObjectId>33204</ObjectId>
       <ColNames>ucenec_predmet_id</ColNames>
       <RefTableId>33134</RefTableId>
@@ -341,7 +369,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="56" parent="36" name="id">
+    <column id="59" parent="36" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -350,25 +378,25 @@
       <TypeId>23</TypeId>
       <SequenceName>predmeti_id_seq</SequenceName>
     </column>
-    <column id="57" parent="36" name="ime">
+    <column id="60" parent="36" name="ime">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="58" parent="36" name="predmeti_pkey">
+    <index id="61" parent="36" name="predmeti_pkey">
       <ObjectId>33130</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="59" parent="36" name="predmeti_pkey">
+    <key id="62" parent="36" name="predmeti_pkey">
       <ObjectId>33131</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>predmeti_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="60" parent="37" name="id">
+    <column id="63" parent="37" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -377,32 +405,32 @@
       <TypeId>23</TypeId>
       <SequenceName>starsi_id_seq</SequenceName>
     </column>
-    <column id="61" parent="37" name="userlogin">
+    <column id="64" parent="37" name="email">
       <Position>2</Position>
       <DataType>varchar(99)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>721</StateNumber>
+      <StateNumber>755</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="62" parent="37" name="password">
+    <column id="65" parent="37" name="password">
       <Position>3</Position>
       <DataType>varchar(99)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="63" parent="37" name="starsi_pkey">
+    <index id="66" parent="37" name="starsi_pkey">
       <ObjectId>33154</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="64" parent="37" name="starsi_pkey">
+    <key id="67" parent="37" name="starsi_pkey">
       <ObjectId>33155</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>starsi_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="65" parent="38" name="id">
+    <column id="68" parent="38" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -411,39 +439,39 @@
       <TypeId>23</TypeId>
       <SequenceName>ucenci_id_seq</SequenceName>
     </column>
-    <column id="66" parent="38" name="stars_id">
+    <column id="69" parent="38" name="stars_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="67" parent="38" name="ime">
+    <column id="70" parent="38" name="ime">
       <Position>3</Position>
       <DataType>varchar(99)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="68" parent="38" name="priimek">
+    <column id="71" parent="38" name="priimek">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="69" parent="38" name="ucenci_pkey">
+    <index id="72" parent="38" name="ucenci_pkey">
       <ObjectId>33122</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="70" parent="38" name="ucenci_pkey">
+    <key id="73" parent="38" name="ucenci_pkey">
       <ObjectId>33123</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>ucenci_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="71" parent="38" name="ucenci_stars_id_fkey">
+    <foreign-key id="74" parent="38" name="ucenci_stars_id_fkey">
       <ObjectId>33176</ObjectId>
       <ColNames>stars_id</ColNames>
       <RefTableId>33150</RefTableId>
@@ -454,7 +482,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="72" parent="39" name="id">
+    <column id="75" parent="39" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -463,39 +491,39 @@
       <TypeId>23</TypeId>
       <SequenceName>ucenci_predmeti_id_seq</SequenceName>
     </column>
-    <column id="73" parent="39" name="ucenec_id">
+    <column id="76" parent="39" name="ucenec_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="74" parent="39" name="predmet_id">
+    <column id="77" parent="39" name="predmet_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="75" parent="39" name="ocena">
+    <column id="78" parent="39" name="ocena">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="76" parent="39" name="ucenci_predmeti_pkey">
+    <index id="79" parent="39" name="ucenci_predmeti_pkey">
       <ObjectId>33138</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="77" parent="39" name="ucenci_predmeti_pkey">
+    <key id="80" parent="39" name="ucenci_predmeti_pkey">
       <ObjectId>33139</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>ucenci_predmeti_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="78" parent="39" name="ucenci_predmeti_ucenec_id_fkey">
+    <foreign-key id="81" parent="39" name="ucenci_predmeti_ucenec_id_fkey">
       <ObjectId>33161</ObjectId>
       <ColNames>ucenec_id</ColNames>
       <RefTableId>33118</RefTableId>
@@ -506,7 +534,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <foreign-key id="79" parent="39" name="ucenci_predmeti_predmet_id_fkey">
+    <foreign-key id="82" parent="39" name="ucenci_predmeti_predmet_id_fkey">
       <ObjectId>33166</ObjectId>
       <ColNames>predmet_id</ColNames>
       <RefTableId>33126</RefTableId>
@@ -517,7 +545,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="80" parent="40" name="id">
+    <column id="83" parent="40" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -526,32 +554,32 @@
       <TypeId>23</TypeId>
       <SequenceName>ucitelji_id_seq</SequenceName>
     </column>
-    <column id="81" parent="40" name="userlogin">
+    <column id="84" parent="40" name="email">
       <Position>2</Position>
       <DataType>varchar(99)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>721</StateNumber>
+      <StateNumber>754</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="82" parent="40" name="password">
+    <column id="85" parent="40" name="password">
       <Position>3</Position>
       <DataType>varchar(900)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="83" parent="40" name="ucitelji_pkey">
+    <index id="86" parent="40" name="ucitelji_pkey">
       <ObjectId>33114</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="84" parent="40" name="ucitelji_pkey">
+    <key id="87" parent="40" name="ucitelji_pkey">
       <ObjectId>33115</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>ucitelji_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="85" parent="41" name="id">
+    <column id="88" parent="41" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -560,32 +588,32 @@
       <TypeId>23</TypeId>
       <SequenceName>ucitelji_predmeti_id_seq</SequenceName>
     </column>
-    <column id="86" parent="41" name="ucitelj_id">
+    <column id="89" parent="41" name="ucitelj_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="87" parent="41" name="predmet_id">
+    <column id="90" parent="41" name="predmet_id">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>721</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="88" parent="41" name="ucitelji_predmeti_pkey">
+    <index id="91" parent="41" name="ucitelji_predmeti_pkey">
       <ObjectId>33146</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="41" name="ucitelji_predmeti_pkey">
+    <key id="92" parent="41" name="ucitelji_predmeti_pkey">
       <ObjectId>33147</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>ucitelji_predmeti_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="90" parent="41" name="ucitelji_predmeti_ucitelj_id_fkey">
+    <foreign-key id="93" parent="41" name="ucitelji_predmeti_ucitelj_id_fkey">
       <ObjectId>33156</ObjectId>
       <ColNames>ucitelj_id</ColNames>
       <RefTableId>33107</RefTableId>
@@ -596,7 +624,7 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <foreign-key id="91" parent="41" name="ucitelji_predmeti_predmet_id_fkey">
+    <foreign-key id="94" parent="41" name="ucitelji_predmeti_predmet_id_fkey">
       <ObjectId>33171</ObjectId>
       <ColNames>predmet_id</ColNames>
       <RefTableId>33126</RefTableId>
@@ -607,99 +635,125 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <argument id="92" parent="42" name="in_ime">
+    <column id="95" parent="42" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>759</StateNumber>
+    </column>
+    <column id="96" parent="42" name="email">
+      <Position>2</Position>
+      <DataType>varchar(99)|0s</DataType>
+      <StateNumber>759</StateNumber>
+    </column>
+    <argument id="97" parent="43" name="in_ime">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="93" parent="42">
+    <argument id="98" parent="43">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="94" parent="43" name="in_ocena">
+    <argument id="99" parent="44" name="in_ocena">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="95" parent="43" name="in_opisna_ocena">
+    <argument id="100" parent="44" name="in_opisna_ocena">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="96" parent="43" name="in_opis_ocene">
+    <argument id="101" parent="44" name="in_opis_ocene">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="97" parent="43" name="in_predmet_id">
+    <argument id="102" parent="44" name="in_predmet_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="98" parent="43" name="in_ucenec_id">
+    <argument id="103" parent="44" name="in_ucenec_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="99" parent="43">
+    <argument id="104" parent="44">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="100" parent="44" name="in_userlogin">
+    <argument id="105" parent="45" name="in_userlogin">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="101" parent="44" name="in_pass1">
+    <argument id="106" parent="45" name="in_pass1">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="102" parent="44" name="in_pass2">
+    <argument id="107" parent="45" name="in_pass2">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="103" parent="44">
+    <argument id="108" parent="45">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="104" parent="45" name="in_ime">
+    <argument id="109" parent="46" name="in_ime">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="105" parent="45" name="in_priimek">
+    <argument id="110" parent="46" name="in_priimek">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="106" parent="45" name="in_stars_id">
+    <argument id="111" parent="46" name="in_stars_id">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
-    </argument>
-    <argument id="107" parent="45">
-      <ArgumentDirection>R</ArgumentDirection>
-      <DataType>integer|0s</DataType>
-    </argument>
-    <argument id="108" parent="46" name="in_userlogin">
-      <Position>1</Position>
-      <DataType>varchar|0s</DataType>
-    </argument>
-    <argument id="109" parent="46" name="in_pass1">
-      <Position>2</Position>
-      <DataType>varchar|0s</DataType>
-    </argument>
-    <argument id="110" parent="46" name="in_pass2">
-      <Position>3</Position>
-      <DataType>varchar|0s</DataType>
-    </argument>
-    <argument id="111" parent="46" name="in_classroom">
-      <Position>4</Position>
       <DataType>integer|0s</DataType>
     </argument>
     <argument id="112" parent="46">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="113" parent="47" name="_userLogin">
+    <argument id="113" parent="47" name="in_email">
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="114" parent="47" name="_password">
+    <argument id="114" parent="47" name="in_pass1">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
     </argument>
-    <argument id="115" parent="47">
+    <argument id="115" parent="47" name="in_pass2">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="116" parent="47" name="in_classroom">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="117" parent="47">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="118" parent="48" name="in_email">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="119" parent="48">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="120" parent="49" name="in_email">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="121" parent="49">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="122" parent="50" name="in_email">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="123" parent="50" name="in_password">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="124" parent="50">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>integer|0s</DataType>
     </argument>
