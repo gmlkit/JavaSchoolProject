@@ -1,5 +1,8 @@
 package eAsistentMini.Logic;
 
+import javafx.collections.FXCollections;
+import javafx.scene.control.ComboBox;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -100,8 +103,8 @@ public class DatabaseWork {
     public void getGrade(){
 
     }
-    public String[][] getStudents(String email){
-        String[][] mate=new String[100][3];
+    public ArrayList<Student> getStudents(String email){
+        ArrayList<Student> mate=new ArrayList<>();
 
         String str="SELECT DISTINCT(u.*)FROM ucenci u \n" +
                 "INNER JOIN ucenci_predmeti u_p ON u_p.ucenec_id=u.id \n" +
@@ -118,10 +121,11 @@ public class DatabaseWork {
             ResultSet rs = psql.executeQuery();
             int i=0;
             while(rs.next()){
-                mate[i][0]=rs.getString(1);
-                mate[i][1]=rs.getString(2);
-                mate[i][2]=rs.getString(3);
-                i++;
+                StringBuilder stringBuilder=new StringBuilder();
+                stringBuilder.append(rs.getString(3));
+                stringBuilder.append(" ");
+                stringBuilder.append(rs.getString(4));
+                mate.add(new Student(stringBuilder.toString(),rs.getInt(1)) );
             }
             rs.close();
             st.close();
