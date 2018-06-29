@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="SchoolProjectJava@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+    <root id="1">
+      <ServerVersion>10.1</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="MeinFührer">
+      <ObjectId>33009</ObjectId>
+    </database>
+    <database id="3" parent="1" name="SchoolProjectJava">
+      <ObjectId>33104</ObjectId>
+      <IntrospectionStateNumber>116</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="4" parent="1" name="avtomobili">
+      <ObjectId>32851</ObjectId>
+    </database>
+    <database id="5" parent="1" name="lol">
+      <ObjectId>32946</ObjectId>
+    </database>
+    <database id="6" parent="1" name="postgres">
+      <ObjectId>12938</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <database id="7" parent="1" name="testiranje">
+      <ObjectId>16467</ObjectId>
+    </database>
+    <role id="8" parent="1" name="SchoolProjectJava">
+      <ObjectId>33212</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="meinF">
+      <ObjectId>33181</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="12" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="13" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="14" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="15" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="16" parent="3" name="information_schema">
+      <ObjectId>12648</ObjectId>
+    </schema>
+    <schema id="17" parent="3" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="18" parent="3" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="19" parent="3" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="20" parent="3" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="21" parent="3" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-06-29.10:39:09.294</IntrospectionTimestamp>
+      <IntrospectionStateNumber>739</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="22" parent="3" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="23" parent="3" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="24" parent="3" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="25" parent="3" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="26" parent="3" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="27" parent="3" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="28" parent="21" name="ocene_id_seq">
+      <ObjectId>33193</ObjectId>
+      <StateNumber>735</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="29" parent="21" name="predmeti_id_seq">
+      <ObjectId>33124</ObjectId>
+      <StateNumber>721</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="30" parent="21" name="starsi_id_seq">
+      <ObjectId>33148</ObjectId>
+      <StateNumber>721</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="31" parent="21" name="ucenci_id_seq">
+      <ObjectId>33116</ObjectId>
+      <StateNumber>721</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="32" parent="21" name="ucenci_predmeti_id_seq">
+      <ObjectId>33132</ObjectId>
+      <StateNumber>721</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="33" parent="21" name="ucitelji_id_seq">
+      <ObjectId>33105</ObjectId>
+      <StateNumber>721</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="34" parent="21" name="ucitelji_predmeti_id_seq">
+      <ObjectId>33140</ObjectId>
+      <StateNumber>721</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="35" parent="21" name="ocene">
+      <ObjectId>33195</ObjectId>
+      <StateNumber>736</StateNumber>
+    </table>
+    <table id="36" parent="21" name="predmeti">
+      <ObjectId>33126</ObjectId>
+      <StateNumber>721</StateNumber>
+    </table>
+    <table id="37" parent="21" name="starsi">
+      <ObjectId>33150</ObjectId>
+      <StateNumber>721</StateNumber>
+    </table>
+    <table id="38" parent="21" name="ucenci">
+      <ObjectId>33118</ObjectId>
+      <StateNumber>721</StateNumber>
+    </table>
+    <table id="39" parent="21" name="ucenci_predmeti">
+      <ObjectId>33134</ObjectId>
+      <StateNumber>735</StateNumber>
+    </table>
+    <table id="40" parent="21" name="ucitelji">
+      <ObjectId>33107</ObjectId>
+      <StateNumber>721</StateNumber>
+    </table>
+    <table id="41" parent="21" name="ucitelji_predmeti">
+      <ObjectId>33142</ObjectId>
+      <StateNumber>721</StateNumber>
+    </table>
+    <routine id="42" parent="21" name="add_class">
+      <ObjectId>33190</ObjectId>
+      <StateNumber>733</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_ime character varying</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="43" parent="21" name="add_grade">
+      <ObjectId>33211</ObjectId>
+      <StateNumber>739</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_ocena integer, in_opisna_ocena character varying, in_opis_ocene character varying, in_predmet_id integer, in_ucenec_id integer</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="44" parent="21" name="add_parrent">
+      <ObjectId>33186</ObjectId>
+      <StateNumber>728</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_userlogin character varying, in_pass1 character varying, in_pass2 character varying</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="45" parent="21" name="add_student">
+      <ObjectId>33189</ObjectId>
+      <StateNumber>732</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_ime character varying, in_priimek character varying, in_stars_id integer</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="46" parent="21" name="add_teacher">
+      <ObjectId>33188</ObjectId>
+      <StateNumber>731</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>in_userlogin character varying, in_pass1 character varying, in_pass2 character varying, in_classroom integer</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="47" parent="21" name="login">
+      <ObjectId>33185</ObjectId>
+      <StateNumber>729</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>&quot;_userLogin&quot; character varying, _password character varying</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <column id="48" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <DefaultExpression>nextval(&apos;ocene_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>ocene_id_seq</SequenceName>
+    </column>
+    <column id="49" parent="35" name="ocena">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="50" parent="35" name="opisna_ocena">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>735</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="51" parent="35" name="ucenec_predmet_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="52" parent="35" name="opis_ocene">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>736</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="53" parent="35" name="ocene_pkey">
+      <ObjectId>33202</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="54" parent="35" name="ocene_pkey">
+      <ObjectId>33203</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>ocene_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="55" parent="35" name="ucenec_predmet_id">
+      <ObjectId>33204</ObjectId>
+      <ColNames>ucenec_predmet_id</ColNames>
+      <RefTableId>33134</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>ucenci_predmeti</RefTableName>
+      <RefKeyName>ucenci_predmeti_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="56" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <DefaultExpression>nextval(&apos;predmeti_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>predmeti_id_seq</SequenceName>
+    </column>
+    <column id="57" parent="36" name="ime">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="58" parent="36" name="predmeti_pkey">
+      <ObjectId>33130</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="36" name="predmeti_pkey">
+      <ObjectId>33131</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>predmeti_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <DefaultExpression>nextval(&apos;starsi_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>starsi_id_seq</SequenceName>
+    </column>
+    <column id="61" parent="37" name="userlogin">
+      <Position>2</Position>
+      <DataType>varchar(99)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="37" name="password">
+      <Position>3</Position>
+      <DataType>varchar(99)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="63" parent="37" name="starsi_pkey">
+      <ObjectId>33154</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="64" parent="37" name="starsi_pkey">
+      <ObjectId>33155</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>starsi_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <DefaultExpression>nextval(&apos;ucenci_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>ucenci_id_seq</SequenceName>
+    </column>
+    <column id="66" parent="38" name="stars_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="67" parent="38" name="ime">
+      <Position>3</Position>
+      <DataType>varchar(99)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="68" parent="38" name="priimek">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="69" parent="38" name="ucenci_pkey">
+      <ObjectId>33122</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="38" name="ucenci_pkey">
+      <ObjectId>33123</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>ucenci_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="38" name="ucenci_stars_id_fkey">
+      <ObjectId>33176</ObjectId>
+      <ColNames>stars_id</ColNames>
+      <RefTableId>33150</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>starsi</RefTableName>
+      <RefKeyName>starsi_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="72" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <DefaultExpression>nextval(&apos;ucenci_predmeti_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>ucenci_predmeti_id_seq</SequenceName>
+    </column>
+    <column id="73" parent="39" name="ucenec_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="74" parent="39" name="predmet_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="75" parent="39" name="ocena">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="76" parent="39" name="ucenci_predmeti_pkey">
+      <ObjectId>33138</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="39" name="ucenci_predmeti_pkey">
+      <ObjectId>33139</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>ucenci_predmeti_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="78" parent="39" name="ucenci_predmeti_ucenec_id_fkey">
+      <ObjectId>33161</ObjectId>
+      <ColNames>ucenec_id</ColNames>
+      <RefTableId>33118</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>ucenci</RefTableName>
+      <RefKeyName>ucenci_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="79" parent="39" name="ucenci_predmeti_predmet_id_fkey">
+      <ObjectId>33166</ObjectId>
+      <ColNames>predmet_id</ColNames>
+      <RefTableId>33126</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>predmeti</RefTableName>
+      <RefKeyName>predmeti_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <column id="80" parent="40" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <DefaultExpression>nextval(&apos;ucitelji_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>ucitelji_id_seq</SequenceName>
+    </column>
+    <column id="81" parent="40" name="userlogin">
+      <Position>2</Position>
+      <DataType>varchar(99)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="82" parent="40" name="password">
+      <Position>3</Position>
+      <DataType>varchar(900)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="83" parent="40" name="ucitelji_pkey">
+      <ObjectId>33114</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="84" parent="40" name="ucitelji_pkey">
+      <ObjectId>33115</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>ucitelji_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="85" parent="41" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <DefaultExpression>nextval(&apos;ucitelji_predmeti_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>ucitelji_predmeti_id_seq</SequenceName>
+    </column>
+    <column id="86" parent="41" name="ucitelj_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="87" parent="41" name="predmet_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>721</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="88" parent="41" name="ucitelji_predmeti_pkey">
+      <ObjectId>33146</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="41" name="ucitelji_predmeti_pkey">
+      <ObjectId>33147</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>ucitelji_predmeti_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="90" parent="41" name="ucitelji_predmeti_ucitelj_id_fkey">
+      <ObjectId>33156</ObjectId>
+      <ColNames>ucitelj_id</ColNames>
+      <RefTableId>33107</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>ucitelji</RefTableName>
+      <RefKeyName>ucitelji_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <foreign-key id="91" parent="41" name="ucitelji_predmeti_predmet_id_fkey">
+      <ObjectId>33171</ObjectId>
+      <ColNames>predmet_id</ColNames>
+      <RefTableId>33126</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>predmeti</RefTableName>
+      <RefKeyName>predmeti_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+    </foreign-key>
+    <argument id="92" parent="42" name="in_ime">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="93" parent="42">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="94" parent="43" name="in_ocena">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="95" parent="43" name="in_opisna_ocena">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="96" parent="43" name="in_opis_ocene">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="97" parent="43" name="in_predmet_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="98" parent="43" name="in_ucenec_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="99" parent="43">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="100" parent="44" name="in_userlogin">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="101" parent="44" name="in_pass1">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="102" parent="44" name="in_pass2">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="103" parent="44">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="104" parent="45" name="in_ime">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="105" parent="45" name="in_priimek">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="106" parent="45" name="in_stars_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="107" parent="45">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="108" parent="46" name="in_userlogin">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="109" parent="46" name="in_pass1">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="110" parent="46" name="in_pass2">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="111" parent="46" name="in_classroom">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="112" parent="46">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="113" parent="47" name="_userLogin">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="114" parent="47" name="_password">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+    </argument>
+    <argument id="115" parent="47">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+  </database-model>
+</dataSource>
