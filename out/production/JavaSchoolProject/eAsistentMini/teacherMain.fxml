@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="378.0" prefWidth="407.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eAsistentMini.TeacherController">
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eAsistentMini.TeacherController">
    <children>
-      <TableView fx:id="studentsTable">
-        <columns>
-          <TableColumn maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Name" />
-          <TableColumn maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Surename" />
-            <TableColumn maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="School Object" />
-            <TableColumn maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" text="Grades" />
-        </columns>
-      </TableView>
-      <Button fx:id="addGradeButton" layoutX="470.0" layoutY="47.0" mnemonicParsing="false" onAction="#addButtonPressed" text="AddGrade" />
-      <Button fx:id="logOffButton" layoutX="520.0" layoutY="247.0" mnemonicParsing="false" onAction="#logOffButtonPressed" text="LogOff" />
-       <TextField fx:id="gradeField" layoutX="448.0" layoutY="14.0" promptText="Write grade here"/>
+      <Button fx:id="addGradeButton" layoutX="460.0" layoutY="124.0" mnemonicParsing="false" onAction="#addButtonPressed" text="AddGrade" />
+       <TextField fx:id="gradeField" layoutX="359.0" layoutY="14.0" promptText="Write grade here" />
+      <ComboBox fx:id="studentsCombo" layoutX="24.0" layoutY="14.0" prefWidth="150.0" onContextMenuRequested="#kill"/>
+      <ComboBox fx:id="classCombo" layoutX="190.0" layoutY="14.0" prefWidth="150.0" onContextMenuRequested="#me"/>
    </children>
 </AnchorPane>

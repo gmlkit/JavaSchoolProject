@@ -1,6 +1,7 @@
 package eAsistentMini.Logic;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseWork {
     public void testDatabaseConn(){
@@ -17,15 +18,10 @@ public class DatabaseWork {
 
         }
     }
-
     public int[] LogIn(String username, String password){
 
         int[] logCheck=new int[2];
         logCheck[0]=2;
-        if(username=="ADMIN"&&password=="ADMIN"){
-            logCheck[0]=5;
-            logCheck[1]=5;
-        }
         String str="SELECT *FROM login(?,?)";
         try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
             Statement st = conn.createStatement();){
@@ -104,7 +100,39 @@ public class DatabaseWork {
     public void getGrade(){
 
     }
-    public void getStudent(){
+    public String[][] getStudents(String email){
+        String[][] mate=new String[100][3];
+
+        String str="SELECT DISTINCT(u.*)FROM ucenci u \n" +
+                "INNER JOIN ucenci_predmeti u_p ON u_p.ucenec_id=u.id \n" +
+                "INNER JOIN predmeti pr ON pr.id=u_p.predmet_id\n" +
+                "INNER JOIN ucitelji_predmeti up ON up.predmet_id=pr.id\n" +
+                "INNER JOIN ucitelji uc ON uc.id=up.ucitelj_id\n" +
+                "WHERE(uc.email=?)";
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+            psql.setString(1,email);
+
+            ResultSet rs = psql.executeQuery();
+            int i=0;
+            while(rs.next()){
+                mate[i][0]=rs.getString(1);
+                mate[i][1]=rs.getString(2);
+                mate[i][2]=rs.getString(3);
+                i++;
+            }
+            rs.close();
+            st.close();
+
+            return mate;
+        }
+
+        catch(Exception es){
+            es.printStackTrace();
+        }
+        return mate;
 
     }
     public int getTeacher(String email){

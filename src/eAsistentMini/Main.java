@@ -12,34 +12,37 @@ import static javafx.application.Application.launch;
 
 public class Main extends Application {
     int ActiveSceene=4;
-    Stage window;
-
+    Stage stage;
     @Override
     public void start(Stage primaryStage) throws Exception{
-
-        window=primaryStage;
-//        Parent login = FXMLLoader.load(getClass().getResource("login.fxml"));
-        selectedStage(ActiveSceene,0);
-        window.setTitle("Login");
-        window.show();
+        stage=primaryStage;
+        Parent logss = FXMLLoader.load(getClass().getResource("login.fxml"));
+        stage.setScene(new Scene(logss));
+        selectedStage(0,0);
 
 
     }
     public void selectedStage(int selectedScene,int userid) throws IOException {
-        Parent login = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Parent admin= FXMLLoader.load(getClass().getResource("admin.fxml"));
-        Parent teacherMain= FXMLLoader.load(getClass().getResource("teacherMain.fxml"));
-        Parent userMain= FXMLLoader.load(getClass().getResource("userMain.fxml"));
         if(selectedScene==0){
-            window.setScene(new Scene(admin));
+            stage.show();
         }else
             if(selectedScene==1){
-            window.setScene(new Scene(teacherMain));
+                Stage keks=new Stage();
+                Parent teacherMain= FXMLLoader.load(getClass().getResource("teacherMain.fxml"));
+                keks.setScene(new Scene(teacherMain));
+                keks.show();
         }else
             if(selectedScene==2){
-            window.setScene(new Scene(userMain));
-        }else{
-                window.setScene(new Scene(login));
+                Stage keks=new Stage();
+                Parent userMain= FXMLLoader.load(getClass().getResource("userMain.fxml"));
+                keks.setScene(new Scene(userMain));
+                keks.show();
+        }else
+            if(selectedScene==3){
+                Stage keks=new Stage();
+                Parent userMain= FXMLLoader.load(getClass().getResource("admin.fxml"));
+                keks.setScene(new Scene(userMain));
+                keks.show();
             }
 
     }
