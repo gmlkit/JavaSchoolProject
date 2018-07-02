@@ -39,9 +39,10 @@ public class TeacherController implements Initializable {
             }
             if (i>0){
             try {
-                System.out.println("To je moj index: "+studentsCombo.getSelectionModel().getSelectedIndex());
+                String[] sp = studentsCombo.getSelectionModel().getSelectedItem().toString().split(" ");
+                int s=dbw.getStudent(sp[0],sp[1]);
                 System.out.println(Integer.parseInt(ids));
-                errors=dbw.addGrade(i,"",Integer.parseInt(ids),3);
+                errors=dbw.addGrade(i,"",Integer.parseInt(ids),s);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -54,6 +55,8 @@ public class TeacherController implements Initializable {
            }else{
                 AlertBox.display("Error","Wrong input format!");
             }
+            gradeField.clear();
+            studentsCombo.getSelectionModel().clearSelection();
         }
 
     }

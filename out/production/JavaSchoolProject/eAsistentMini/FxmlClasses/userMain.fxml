@@ -8,9 +8,7 @@
    <children>
       <TableView fx:id="gradesTable" layoutX="14.0" layoutY="3.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Student" />
-            <TableColumn prefWidth="75.0" text="Class" />
-            <TableColumn prefWidth="75.0" text="Grade" />
+
          </columns>
       </TableView>
    </children>

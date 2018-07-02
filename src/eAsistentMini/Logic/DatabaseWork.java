@@ -59,7 +59,6 @@ public class DatabaseWork {
         }
         return logCheck;
     }
-
     public int addGrade(int ocena, String opOcena, int predmet, int ucenec) {
         int success = 3;
         String str = "SELECT add_grade(?,?,?,?)";
@@ -86,7 +85,6 @@ public class DatabaseWork {
             return success;
         }
     }
-
     public ObservableList<String> getClassesArray(int id, String str) {
         ArrayList<String> mate = new ArrayList<>();
         ObservableList<String> SSS;
@@ -118,7 +116,6 @@ public class DatabaseWork {
         return SSS = FXCollections.observableArrayList(s);
 
     }
-
     public ObservableList<String> getStudentArray(int id, int prId) {
         ArrayList<String> mate = new ArrayList<>();
         ObservableList<String> SSS;
@@ -154,7 +151,6 @@ public class DatabaseWork {
         ArrayList<String> s = new ArrayList<>();
         return SSS = FXCollections.observableArrayList(s);
     }
-
     public int getTeacher(String email) {
         String str = "SELECT id AS \"id\" FROM ucitelji WHERE email LIKE ?";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
@@ -179,7 +175,6 @@ public class DatabaseWork {
         }
         return 123123;
     }
-
     public int getParrent(String email) {
         String str = "SELECT id FROM starsi WHERE email LIKE ?";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
@@ -204,22 +199,14 @@ public class DatabaseWork {
         return 123123;
 
     }
-
-    public void getGrade() {
-
-
-    }
-
-    public int addTeacher(String email, String pass1, String pass2, int classRoom) {
-        String str = "SELECT *FROM add_teacher()?,?,?,?)";
+    public int getStudent(String ime,String priimek) {
+        String str = "SELECT id FROM ucenci WHERE ime LIKE ? AND priimek LIKE ?";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
              Statement st = conn.createStatement();) {
 
             PreparedStatement psql = conn.prepareStatement(str);
-            psql.setString(1, email);
-            psql.setString(2, pass1);
-            psql.setString(2, pass2);
-            psql.setInt(2, classRoom);
+            psql.setString(1, ime);
+            psql.setString(2, priimek);
 
             ResultSet rs = psql.executeQuery();
             int mate = 0;
@@ -234,10 +221,9 @@ public class DatabaseWork {
         } catch (Exception es) {
             es.printStackTrace();
         }
-        return 3;
+        return 123123;
 
     }
-
     public ObservableList<String> getParents() {
         ArrayList<ParentOb> mate = new ArrayList<>();
         ObservableList<String> SSS;
@@ -274,7 +260,6 @@ public class DatabaseWork {
         return SSS = FXCollections.observableArrayList(s);
 
     }
-
     public ObservableList<String> getStudents() {
         ArrayList<ObjectSet> mate = new ArrayList<>();
         ObservableList<String> SSS;
@@ -315,7 +300,6 @@ public class DatabaseWork {
         return SSS = FXCollections.observableArrayList(s);
 
     }
-
     public ObservableList<String> getClasses(int id) {
         ArrayList<ObjectSet> mate = new ArrayList<>();
         ObservableList<String> SSS;
@@ -359,11 +343,42 @@ public class DatabaseWork {
         return SSS = FXCollections.observableArrayList(s);
 
     }
+
     public void addParrent() {
 
     }
-
     public void addStudent() {
+
+    }
+    public void getGrade() {
+
+
+    }
+    public int addTeacher(String email, String pass1, String pass2, int classRoom) {
+        String str = "SELECT *FROM add_teacher()?,?,?,?)";
+        try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+             Statement st = conn.createStatement();) {
+
+            PreparedStatement psql = conn.prepareStatement(str);
+            psql.setString(1, email);
+            psql.setString(2, pass1);
+            psql.setString(2, pass2);
+            psql.setInt(2, classRoom);
+
+            ResultSet rs = psql.executeQuery();
+            int mate = 0;
+            while (rs.next()) {
+                mate = rs.getInt(1);
+
+            }
+            rs.close();
+            st.close();
+
+            return mate;
+        } catch (Exception es) {
+            es.printStackTrace();
+        }
+        return 3;
 
     }
 }

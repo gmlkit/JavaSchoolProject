@@ -1,6 +1,7 @@
 package eAsistentMini.Controllers;
 
 import eAsistentMini.Logic.Conn;
+import eAsistentMini.Main;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -11,13 +12,12 @@ import javafx.scene.control.TableView;
 import javafx.util.Callback;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
     public TableView gradesTable;
+    static private int userId=new Main().getCurrentUser();
     //TABLE VIEW AND DATA
     private ObservableList<ObservableList> data;
     @Override
@@ -30,10 +30,21 @@ public class UserController implements Initializable {
         data = FXCollections.observableArrayList();
         try{
             c = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();
+
             //SQL FOR SELECTING ALL OF CUSTOMER
-            String SQL = "SELECT * from ucenci";
+            String SQL = "SELECT u.ime,u.priimek,pr.ime,o.ocena FROM starsi s \n" +
+                    "INNER JOIN ucenci u ON u.stars_id=s.id \n" +
+                    "INNER JOIN ucenci_predmeti up ON up.ucenec_id=u.id \n" +
+                    "INNER JOIN predmeti pr ON up.predmet_id=pr.id \n" +
+                    "INNER JOIN ocene o ON o.ucenec_id=up.id\n" +
+                    "WHERE s.id=?";
+            PreparedStatement psql =c.prepareStatement(SQL);
+            psql.setInt(1,userId);
+//            psql.setInt(2,prId);
             //ResultSet
-            ResultSet rs = c.createStatement().executeQuery(SQL);
+            ResultSet rs = psql.executeQuery();
 
             /**********************************
              * TABLE COLUMN ADDED DYNAMICALLY *
