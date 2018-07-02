@@ -28,7 +28,7 @@ public class TeacherController implements Initializable {
         {
             AlertBox.display("Fill error","Fill those fields!");
         }else if(studentsCombo.getSelectionModel().isEmpty()){
-            AlertBox.display("Fill error","Student not selected!");
+            AlertBox.display("Fill error","ObjectSet not selected!");
         }else{
             int i=-1;
             try {

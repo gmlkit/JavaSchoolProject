@@ -1,6 +1,6 @@
 package eAsistentMini.Logic.Objects;
 
-public class Student {
+public class ObjectSet {
     private String name;
     private int id;
     public String getName() {
@@ -11,17 +11,17 @@ public class Student {
         return id;
     }
 
-    public Student(String name, int id) {
+    public ObjectSet(String name, int id) {
         this.name = name;
         this.id = id;
     }
-    public String toString(Student object) {
+    public String toString(ObjectSet object) {
         return object.getName();
     }
-    public Student fromString(String string) {
+    public ObjectSet fromString(String string) {
         return null;
     }
-    public int getId(Student object){
+    public int getId(ObjectSet object){
         return object.getId();
     }
 }

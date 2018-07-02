@@ -19,16 +19,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage=primaryStage;
-        Parent logss = FXMLLoader.load(getClass().getResource("FxmlClasses/login.fxml"));
-        stage.setScene(new Scene(logss));
         selectedStage(0,0);
-
-
-
     }
     public void selectedStage(int selectedScene,int userid) throws IOException {
         currentUser=userid;
         if(selectedScene==0){
+            Parent logss = FXMLLoader.load(getClass().getResource("FxmlClasses/login.fxml"));
+            stage.setScene(new Scene(logss));
             stage.show();
         }else
             if(selectedScene==1){
@@ -75,5 +72,3 @@ public class Main extends Application {
         launch(args);
     }
 }
-
-
