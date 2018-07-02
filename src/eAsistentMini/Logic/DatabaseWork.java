@@ -1,7 +1,9 @@
 package eAsistentMini.Logic;
 
+import eAsistentMini.Logic.Objects.Classes;
+import eAsistentMini.Logic.Objects.Student;
 import javafx.collections.FXCollections;
-import javafx.scene.control.ComboBox;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,6 +45,7 @@ public class DatabaseWork {
 
             if(logCheck[0]==1){//učitelji
                 logCheck[1]=getTeacher(username);
+                System.out.println("Log Check Value"+logCheck[1]);
                 if(logCheck[1]==123123){
                     System.out.println(logCheck[1]);
                 }
@@ -94,29 +97,97 @@ public class DatabaseWork {
     public void addStudent(){
 
     }
-    public void addClass(){
 
-    }
-    public void addGrade(){
-
-    }
-    public void getGrade(){
-
-    }
-    public ArrayList<Student> getStudents(String email){
-        ArrayList<Student> mate=new ArrayList<>();
-
-        String str="SELECT DISTINCT(u.*)FROM ucenci u \n" +
-                "INNER JOIN ucenci_predmeti u_p ON u_p.ucenec_id=u.id \n" +
-                "INNER JOIN predmeti pr ON pr.id=u_p.predmet_id\n" +
-                "INNER JOIN ucitelji_predmeti up ON up.predmet_id=pr.id\n" +
-                "INNER JOIN ucitelji uc ON uc.id=up.ucitelj_id\n" +
-                "WHERE(uc.email=?)";
+    public void addGrade(int ocena,String opOcena,String opisOcene,int predmet,int ucenec){
+        String str="SELECT * FROM add_grade(?,?,?,?,?)";
         try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
             Statement st = conn.createStatement();){
 
             PreparedStatement psql=conn.prepareStatement(str);
-            psql.setString(1,email);
+            //psql.setString(1,email);
+            psql.setInt(1,);
+
+            ResultSet rs = psql.executeQuery();
+            int i=0;
+            while(rs.next()){
+
+            }
+            rs.close();
+            st.close();
+            String stdnt;
+            //int id;
+            ArrayList<String> sList=new ArrayList<>();
+            for (Student s:mate
+                    ) {
+                stdnt=s.toString(s);
+                sList.add(stdnt);
+            }
+            SSS=FXCollections.observableArrayList(sList);
+
+            return SSS;
+
+    }
+    public void getGrade(){
+
+
+    }
+    public ObservableList<String> getObjects(int id,String str){
+        ArrayList<Student> mate=new ArrayList<>();
+        ObservableList<String> SSS;
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+            //psql.setString(1,email);
+            psql.setInt(1,id);
+
+            ResultSet rs = psql.executeQuery();
+            int i=0;
+            while(rs.next()){
+                StringBuilder stringBuilder=new StringBuilder();
+                stringBuilder.append(rs.getString("first"));
+                stringBuilder.append(" ");
+                stringBuilder.append(rs.getString("seccond"));
+                mate.add(new Student(stringBuilder.toString(),rs.getInt(1)) );
+            }
+            rs.close();
+            st.close();
+            String stdnt;
+            //int id;
+            ArrayList<String> sList=new ArrayList<>();
+            for (Student s:mate
+                    ) {
+                stdnt=s.toString(s);
+                sList.add(stdnt);
+            }
+            SSS=FXCollections.observableArrayList(sList);
+
+            return SSS;
+        }
+
+        catch(Exception es){
+            es.printStackTrace();
+        }
+        ArrayList<String> s=new ArrayList<>();
+        return SSS=FXCollections.observableArrayList(s);
+
+    }
+    public ObservableList<String> getStudent(int id,int prId){
+        ArrayList<Student> mate=new ArrayList<>();
+        ObservableList<String> SSS;
+
+        String str="SELECT DISTINCT u.* FROM ucenci u \n" +
+                "            INNER JOIN ucenci_predmeti u_p ON u_p.ucenec_id=u.id\n" +
+                "            INNER JOIN predmeti pr ON pr.id=u_p.predmet_id\n" +
+                "            INNER JOIN ucitelji_predmeti up ON up.predmet_id=pr.id\n" +
+                "            INNER JOIN ucitelji uc ON uc.id=up.ucitelj_id\n" +
+                "            WHERE(uc.id=? AND pr.id=?)";
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+            psql.setInt(1,id);
+            psql.setInt(2,prId);
 
             ResultSet rs = psql.executeQuery();
             int i=0;
@@ -129,18 +200,27 @@ public class DatabaseWork {
             }
             rs.close();
             st.close();
+            String stdnt;
+            ArrayList<String> sList=new ArrayList<>();
+            for (Student s:mate
+                    ) {
+                stdnt=s.toString(s);
+                sList.add(stdnt);
+            }
+            SSS=FXCollections.observableArrayList(sList);
 
-            return mate;
+            return SSS;
         }
 
         catch(Exception es){
             es.printStackTrace();
         }
-        return mate;
+        ArrayList<String> s=new ArrayList<>();
+        return SSS=FXCollections.observableArrayList(s);
 
     }
     public int getTeacher(String email){
-        String str="SELECT id FROM ucitelji WHERE email LIKE ?";
+        String str="SELECT id AS \"id\" FROM ucitelji WHERE email LIKE ?";
         try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
             Statement st = conn.createStatement();){
 
@@ -150,7 +230,7 @@ public class DatabaseWork {
             ResultSet rs = psql.executeQuery();
             int mate=0;
             while(rs.next()){
-                mate=rs.getInt(1);
+                mate=rs.getInt("id");
 
             }
             rs.close();

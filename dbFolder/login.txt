@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNCTION login(in_email varchar, in_password varchar)
+RETURNS integer AS
+$$
+DECLARE
+login integer;
+BEGIN
+IF EXISTS (SELECT * FROM starsi WHERE (email LIKE in_email) AND (password LIKE in_password))THEN
+login := 0;
+ELSE
+IF EXISTS(SELECT * FROM ucitelji WHERE (email = in_email) AND (password = in_password)) THEN
+login := 1;
+ELSE
+login := 2;
+END IF;
+END IF;
+RETURN login;
+END
+$$
+LANGUAGE'plpgsql';

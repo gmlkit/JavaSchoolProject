@@ -1,7 +1,8 @@
-package eAsistentMini;
+package eAsistentMini.Controllers;
 
 import eAsistentMini.Logic.AlertBox;
 import eAsistentMini.Logic.DatabaseWork;
+import eAsistentMini.Main;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -25,7 +26,9 @@ public class LoginController {
         }
         else if(passwordField.getText().equals("admin")&&passwordField.getText().equals("admin")){
             AlertBox.display("Success","ADMIN");
-            main.selectedStage(3,5);
+            main.selectedStage(3,0);
+            passwordField.clear();
+            userField.clear();
 
         }
         else{
@@ -37,14 +40,20 @@ public class LoginController {
 //                AlertBox.display("Success","Hello Mušić!");
                 main.selectedStage(1,logCheck[1]);
                 System.out.println(logCheck[0]+","+logCheck[1]);
+                passwordField.clear();
+                userField.clear();
 
             }else if(logCheck[0]==0){
 //                AlertBox.display("Success","Parent welcome to my app!");
                 main.selectedStage(2,logCheck[1]);
+                passwordField.clear();
+                userField.clear();
 
             }
             else{
                 AlertBox.display("eAsistentMini Error","Username or Password incorrect");
+                passwordField.clear();
+                userField.clear();
             }
 
         }catch (Exception e){

@@ -10,5 +10,13 @@
       <user-name>SchoolProjectJava</user-name>
       <introspection-schemas>SchoolProjectJava:public</introspection-schemas>
     </data-source>
+    <data-source name="Alah" uuid="409f7d8f-7033-4d8c-96a1-83d18515b5d0">
+      <database-info product="PostgreSQL" version="9.4.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>carwdmge</user-name>
+      <introspection-schemas>carwdmge:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

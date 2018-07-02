@@ -5,44 +5,69 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-
-import static javafx.application.Application.launch;
-
 public class Main extends Application {
-    int ActiveSceene=4;
-    Stage stage;
+    static Stage stage;
+    static Stage keks;
+    private static int currentUser;
+
+    public int getCurrentUser() {
+        return currentUser;
+    }
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage=primaryStage;
-        Parent logss = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent logss = FXMLLoader.load(getClass().getResource("FxmlClasses/login.fxml"));
         stage.setScene(new Scene(logss));
         selectedStage(0,0);
 
 
+
     }
     public void selectedStage(int selectedScene,int userid) throws IOException {
+        currentUser=userid;
         if(selectedScene==0){
             stage.show();
         }else
             if(selectedScene==1){
-                Stage keks=new Stage();
-                Parent teacherMain= FXMLLoader.load(getClass().getResource("teacherMain.fxml"));
+            keks=new Stage();
+                Parent teacherMain= FXMLLoader.load(getClass().getResource("FxmlClasses/teacherMain.fxml"));
                 keks.setScene(new Scene(teacherMain));
                 keks.show();
+                keks.setTitle("Teaches panel");
+                System.out.println("Main Select Scene"+userid);
+                stage.hide();
+                keks.setOnCloseRequest((WindowEvent e)->{
+                    this.stage.show();
+                });
         }else
             if(selectedScene==2){
-                Stage keks=new Stage();
-                Parent userMain= FXMLLoader.load(getClass().getResource("userMain.fxml"));
+                keks=new Stage();
+                Parent userMain= FXMLLoader.load(getClass().getResource("FxmlClasses/userMain.fxml"));
                 keks.setScene(new Scene(userMain));
                 keks.show();
+                keks.setTitle("Parent panel");
+                System.out.println("Main Select Scene"+userid);
+                stage.hide();
+
+                keks.setOnCloseRequest((WindowEvent e)->{
+                    this.stage.show();
+                });
         }else
             if(selectedScene==3){
-                Stage keks=new Stage();
-                Parent userMain= FXMLLoader.load(getClass().getResource("admin.fxml"));
+                keks=new Stage();
+                Parent userMain= FXMLLoader.load(getClass().getResource("FxmlClasses/admin.fxml"));
                 keks.setScene(new Scene(userMain));
                 keks.show();
+                keks.setTitle("Admin panel");
+                System.out.println("To je admin id:"+userid);
+                stage.hide();
+
+                keks.setOnCloseRequest((WindowEvent e)->{
+                    this.stage.show();
+                });
             }
 
     }

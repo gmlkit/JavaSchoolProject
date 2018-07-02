@@ -1,7 +1,7 @@
-package eAsistentMini.Logic;
-import java.util.ResourceBundle;
+package eAsistentMini.Logic.Objects;
+
 public class Student {
-    private String name
+    private String name;
     private int id;
     public String getName() {
         return name;
@@ -15,7 +15,6 @@ public class Student {
         this.name = name;
         this.id = id;
     }
-    @Override
     public String toString(Student object) {
         return object.getName();
     }
