@@ -98,34 +98,32 @@ public class DatabaseWork {
 
     }
 
-    public void addGrade(int ocena,String opOcena,String opisOcene,int predmet,int ucenec){
-        String str="SELECT * FROM add_grade(?,?,?,?,?)";
-        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
-            Statement st = conn.createStatement();){
+    public int addGrade(int ocena,String opOcena,String opisOcene,int predmet,int ucenec) {
+        int success = 3;
+        String str = "SELECT add_grade(?,?,?,?,?)";
+        try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+             Statement st = conn.createStatement();) {
 
-            PreparedStatement psql=conn.prepareStatement(str);
-            //psql.setString(1,email);
-            psql.setInt(1,);
+            PreparedStatement psql = conn.prepareStatement(str);
+            psql.setInt(1, ocena);
+            psql.setInt(4,predmet);
+            psql.setInt(5,ucenec);
+            psql.setString(2,opOcena);
+            psql.setString(3,opisOcene);
+
 
             ResultSet rs = psql.executeQuery();
-            int i=0;
-            while(rs.next()){
-
+            int i = 0;
+            while (rs.next()) {
+                success=rs.getInt(1);
             }
             rs.close();
             st.close();
-            String stdnt;
-            //int id;
-            ArrayList<String> sList=new ArrayList<>();
-            for (Student s:mate
-                    ) {
-                stdnt=s.toString(s);
-                sList.add(stdnt);
-            }
-            SSS=FXCollections.observableArrayList(sList);
-
-            return SSS;
-
+            return success;
+        }catch (Exception e){
+            System.out.println(e);
+            return success;
+        }
     }
     public void getGrade(){
 
@@ -161,8 +159,8 @@ public class DatabaseWork {
                 sList.add(stdnt);
             }
             SSS=FXCollections.observableArrayList(sList);
-
             return SSS;
+
         }
 
         catch(Exception es){

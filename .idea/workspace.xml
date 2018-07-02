@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7472ed2d-1ee6-4cc2-8c75-876dace7dc53" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/eAsistentMini/Logic/Objects/Classes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03dbe9b7-5290-453b-a0e3-c4ad812d5077.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbFolder/login.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dbFolder/login.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbFolder/prototype.dm2" beforeDir="false" afterPath="$PROJECT_DIR$/dbFolder/prototype.dm2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbFolder/prototype.~m2" beforeDir="false" afterPath="$PROJECT_DIR$/dbFolder/prototype.~m2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Logic/Conn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Logic/Conn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Logic/DatabaseWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Logic/DatabaseWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/TeacherController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/admin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/teacherMain.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/userMain.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Logic/Conn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Logic/Conn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaSchoolProject/eAsistentMini/Controllers/TeacherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Logic/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Logic/Objects/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/FxmlClasses/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/FxmlClasses/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/teacherMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/FxmlClasses/teacherMain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eAsistentMini/userMain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/eAsistentMini/FxmlClasses/userMain.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -140,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseWork.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatabaseWork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="102" column="62" lean-forward="true" selection-start-line="102" selection-start-column="62" selection-end-line="102" selection-end-column="62" />
+            <state relative-caret-position="846">
+              <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#testDatabaseConn#0;class#DatabaseWork#0" />
@@ -152,6 +124,8 @@
                 <element signature="method#addTeacher#0;class#DatabaseWork#0" />
                 <element signature="method#addParrent#0;class#DatabaseWork#0" />
                 <element signature="method#addStudent#0;class#DatabaseWork#0" />
+                <element signature="method#getGrade#0;class#DatabaseWork#0" />
+                <element signature="method#getObjects#0;class#DatabaseWork#0" />
                 <element signature="method#getStudent#0;class#DatabaseWork#0" />
                 <element signature="method#getTeacher#0;class#DatabaseWork#0" />
                 <element signature="method#getParrent#0;class#DatabaseWork#0" />
@@ -179,13 +153,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TeacherController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TeacherController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+            <state relative-caret-position="680">
+              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#initialize#0;class#TeacherController#0" />
               </folding>
             </state>
           </provider>
@@ -259,8 +234,8 @@
         <option value="$PROJECT_DIR$/src/eAsistentMini/FxmlClasses/teacherMain.fxml" />
         <option value="$PROJECT_DIR$/src/eAsistentMini/Controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/eAsistentMini/Main.java" />
-        <option value="$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java" />
         <option value="$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java" />
+        <option value="$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java" />
       </list>
     </option>
   </component>
@@ -324,13 +299,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="eAsistentMini" type="462c0819:PsiDirectoryNode" />
               <item name="FxmlClasses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSchoolProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSchoolProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="eAsistentMini" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -466,12 +434,12 @@
       <workItem from="1530257865644" duration="34939000" />
       <workItem from="1530344680919" duration="13921000" />
       <workItem from="1530435976906" duration="11729000" />
-      <workItem from="1530527844894" duration="6817000" />
+      <workItem from="1530527844894" duration="12095000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67406000" />
+    <option name="totallyTimeSpent" value="72684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -487,11 +455,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27995643" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27995643" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20575693" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20575693" />
       <window_info anchor="right" id="Database" order="3" weight="0.32889125" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -592,6 +560,8 @@
             <element signature="method#addTeacher#0;class#DatabaseWork#0" />
             <element signature="method#addParrent#0;class#DatabaseWork#0" />
             <element signature="method#addStudent#0;class#DatabaseWork#0" />
+            <element signature="method#getGrade#0;class#DatabaseWork#0" />
+            <element signature="method#getObjects#0;class#DatabaseWork#0" />
             <element signature="method#getStudent#0;class#DatabaseWork#0" />
             <element signature="method#getTeacher#0;class#DatabaseWork#0" />
             <element signature="method#getParrent#0;class#DatabaseWork#0" />
@@ -638,6 +608,7 @@
           <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#TeacherController#0" />
           </folding>
         </state>
       </provider>
@@ -670,6 +641,8 @@
             <element signature="method#addTeacher#0;class#DatabaseWork#0" />
             <element signature="method#addParrent#0;class#DatabaseWork#0" />
             <element signature="method#addStudent#0;class#DatabaseWork#0" />
+            <element signature="method#getGrade#0;class#DatabaseWork#0" />
+            <element signature="method#getObjects#0;class#DatabaseWork#0" />
             <element signature="method#getStudent#0;class#DatabaseWork#0" />
             <element signature="method#getTeacher#0;class#DatabaseWork#0" />
             <element signature="method#getParrent#0;class#DatabaseWork#0" />
@@ -720,6 +693,7 @@
           <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#TeacherController#0" />
           </folding>
         </state>
       </provider>
@@ -760,6 +734,8 @@
             <element signature="method#addTeacher#0;class#DatabaseWork#0" />
             <element signature="method#addParrent#0;class#DatabaseWork#0" />
             <element signature="method#addStudent#0;class#DatabaseWork#0" />
+            <element signature="method#getGrade#0;class#DatabaseWork#0" />
+            <element signature="method#getObjects#0;class#DatabaseWork#0" />
             <element signature="method#getStudent#0;class#DatabaseWork#0" />
             <element signature="method#getTeacher#0;class#DatabaseWork#0" />
             <element signature="method#getParrent#0;class#DatabaseWork#0" />
@@ -785,6 +761,7 @@
           <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#TeacherController#0" />
           </folding>
         </state>
       </provider>
@@ -920,20 +897,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/eAsistentMini/Logic/DatabaseWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="102" column="62" lean-forward="true" selection-start-line="102" selection-start-column="62" selection-end-line="102" selection-end-column="62" />
+        <state relative-caret-position="846">
+          <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testDatabaseConn#0;class#DatabaseWork#0" />
@@ -941,9 +908,22 @@
             <element signature="method#addTeacher#0;class#DatabaseWork#0" />
             <element signature="method#addParrent#0;class#DatabaseWork#0" />
             <element signature="method#addStudent#0;class#DatabaseWork#0" />
+            <element signature="method#getGrade#0;class#DatabaseWork#0" />
+            <element signature="method#getObjects#0;class#DatabaseWork#0" />
             <element signature="method#getStudent#0;class#DatabaseWork#0" />
             <element signature="method#getTeacher#0;class#DatabaseWork#0" />
             <element signature="method#getParrent#0;class#DatabaseWork#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eAsistentMini/Controllers/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#TeacherController#0" />
           </folding>
         </state>
       </provider>
