@@ -39,15 +39,16 @@ public class TeacherController implements Initializable {
             }
             if (i>0){
             try {
+                System.out.println("To je moj index: "+studentsCombo.getSelectionModel().getSelectedIndex());
                 System.out.println(Integer.parseInt(ids));
-                errors=dbw.addGrade(i,"","",Integer.parseInt(ids),2);
+                errors=dbw.addGrade(i,"",Integer.parseInt(ids),3);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
             if(errors==0){
                AlertBox.display("Success","Successfully added new grade!");
 
-           }else {
+           }else if(errors==3){
                AlertBox.display("Error","I crashed sorry!");
            }
            }else{
@@ -65,20 +66,14 @@ public class TeacherController implements Initializable {
                 "\tINNER JOIN predmeti pr ON pr.id=up.predmet_id \n" +
                 "\tWHERE u.id =?";
 
-        ObservableList<String> classes=dbw.getClasses(userId,strClass);
+        ObservableList<String> classes=dbw.getClassesArray(userId,strClass);
         classCombo.setItems(classes);
         classCombo.getSelectionModel().selectedItemProperty().addListener((options,oldValue,newValue)->{
-//            String strStudent="SELECT DISTINCT u.*FROM ucenci u \n" +
-//                    "            INNER JOIN ucenci_predmeti u_p ON u_p.ucenec_id=u.id\n" +
-//                    "            INNER JOIN predmeti pr ON pr.id=u_p.predmet_id\n" +
-//                    "            INNER JOIN ucitelji_predmeti up ON up.predmet_id=pr.id\n" +
-//                    "            INNER JOIN ucitelji uc ON uc.id=up.ucitelj_id\n" +
-//                    "            WHERE(uc.id=? AND pr=?)";
             ids=classCombo.getSelectionModel().getSelectedItem().toString();
             ids= ids.substring(0, ids.indexOf(" "));
             System.out.println("Jaz te mam ful rad"+ids);
             try {
-                ObservableList<String> students=dbw.getStudent(userId,Integer.parseInt(ids));
+                ObservableList<String> students=dbw.getStudentArray(userId,Integer.parseInt(ids));
                 studentsCombo.setItems(students);
             } catch (Exception e) {
                 e.printStackTrace();

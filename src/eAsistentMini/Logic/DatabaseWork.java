@@ -60,18 +60,17 @@ public class DatabaseWork {
         return logCheck;
     }
 
-    public int addGrade(int ocena, String opOcena, String opisOcene, int predmet, int ucenec) {
+    public int addGrade(int ocena, String opOcena, int predmet, int ucenec) {
         int success = 3;
-        String str = "SELECT add_grade(?,?,?,?,?)";
+        String str = "SELECT add_grade(?,?,?,?)";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
              Statement st = conn.createStatement();) {
 
             PreparedStatement psql = conn.prepareStatement(str);
-            psql.setInt(1, ocena);
-            psql.setInt(4, predmet);
-            psql.setInt(5, ucenec);
-            psql.setString(2, opOcena);
-            psql.setString(3, opisOcene);
+            psql.setInt(3, ocena);
+            psql.setInt(2, predmet);
+            psql.setInt(1, ucenec);
+            psql.setString(4, opOcena);
 
 
             ResultSet rs = psql.executeQuery();
@@ -88,8 +87,8 @@ public class DatabaseWork {
         }
     }
 
-    public ObservableList<String> getClasses(int id, String str) {
-        ArrayList<ObjectSet> mate = new ArrayList<>();
+    public ObservableList<String> getClassesArray(int id, String str) {
+        ArrayList<String> mate = new ArrayList<>();
         ObservableList<String> SSS;
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
              Statement st = conn.createStatement();) {
@@ -105,19 +104,11 @@ public class DatabaseWork {
                 stringBuilder.append(rs.getString("first"));
                 stringBuilder.append(" ");
                 stringBuilder.append(rs.getString("seccond"));
-                mate.add(new ObjectSet(stringBuilder.toString(), rs.getInt(1)));
+                mate.add(stringBuilder.toString());
             }
             rs.close();
             st.close();
-            String stdnt;
-            //int id;
-            ArrayList<String> sList = new ArrayList<>();
-            for (ObjectSet s : mate
-                    ) {
-                stdnt = s.toString(s);
-                sList.add(stdnt);
-            }
-            SSS = FXCollections.observableArrayList(sList);
+            SSS = FXCollections.observableArrayList(mate);
             return SSS;
 
         } catch (Exception es) {
@@ -128,8 +119,8 @@ public class DatabaseWork {
 
     }
 
-    public ObservableList<String> getStudent(int id, int prId) {
-        ArrayList<ObjectSet> mate = new ArrayList<>();
+    public ObservableList<String> getStudentArray(int id, int prId) {
+        ArrayList<String> mate = new ArrayList<>();
         ObservableList<String> SSS;
 
         String str = "SELECT DISTINCT u.* FROM ucenci u \n" +
@@ -140,7 +131,6 @@ public class DatabaseWork {
                 "            WHERE(uc.id=? AND pr.id=?)";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
              Statement st = conn.createStatement();) {
-
             PreparedStatement psql = conn.prepareStatement(str);
             psql.setInt(1, id);
             psql.setInt(2, prId);
@@ -152,26 +142,17 @@ public class DatabaseWork {
                 stringBuilder.append(rs.getString(3));
                 stringBuilder.append(" ");
                 stringBuilder.append(rs.getString(4));
-                mate.add(new ObjectSet(stringBuilder.toString(), rs.getInt(1)));
+                mate.add(stringBuilder.toString());
             }
             rs.close();
             st.close();
-            String stdnt;
-            ArrayList<String> sList = new ArrayList<>();
-            for (ObjectSet s : mate
-                    ) {
-                stdnt = s.toString(s);
-                sList.add(stdnt);
-            }
-            SSS = FXCollections.observableArrayList(sList);
-
+            SSS = FXCollections.observableArrayList(mate);
             return SSS;
         } catch (Exception es) {
             es.printStackTrace();
         }
         ArrayList<String> s = new ArrayList<>();
         return SSS = FXCollections.observableArrayList(s);
-
     }
 
     public int getTeacher(String email) {
