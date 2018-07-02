@@ -48,7 +48,7 @@ public class Main extends Application {
                 Parent userMain= FXMLLoader.load(getClass().getResource("FxmlClasses/userMain.fxml"));
                 keks.setScene(new Scene(userMain));
                 keks.show();
-                keks.setTitle("Parent panel");
+                keks.setTitle("ParentOb panel");
                 System.out.println("Main Select Scene"+userid);
                 stage.hide();
 

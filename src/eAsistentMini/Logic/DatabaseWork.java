@@ -1,6 +1,7 @@
 package eAsistentMini.Logic;
 
 import eAsistentMini.Logic.Objects.Classes;
+import eAsistentMini.Logic.Objects.ParentOb;
 import eAsistentMini.Logic.Objects.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -62,42 +63,6 @@ public class DatabaseWork {
         }
         return logCheck;
     }
-    public int addTeacher(String email,String pass1,String pass2,int classRoom){
-        String str="SELECT *FROM add_teacher()?,?,?,?)";
-        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
-            Statement st = conn.createStatement();){
-
-            PreparedStatement psql=conn.prepareStatement(str);
-            psql.setString(1,email);
-            psql.setString(2,pass1);
-            psql.setString(2,pass2);
-            psql.setInt(2,classRoom);
-
-            ResultSet rs = psql.executeQuery();
-            int mate=0;
-            while(rs.next()){
-                mate=rs.getInt(1);
-
-            }
-            rs.close();
-            st.close();
-
-            return mate;
-        }
-
-        catch(Exception es){
-            es.printStackTrace();
-        }
-        return 3;
-
-    }
-    public void addParrent(){
-
-    }
-    public void addStudent(){
-
-    }
-
     public int addGrade(int ocena,String opOcena,String opisOcene,int predmet,int ucenec) {
         int success = 3;
         String str = "SELECT add_grade(?,?,?,?,?)";
@@ -125,11 +90,7 @@ public class DatabaseWork {
             return success;
         }
     }
-    public void getGrade(){
-
-
-    }
-    public ObservableList<String> getObjects(int id,String str){
+    public ObservableList<String> getClasses(int id, String str){
         ArrayList<Student> mate=new ArrayList<>();
         ObservableList<String> SSS;
         try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
@@ -269,4 +230,166 @@ public class DatabaseWork {
         return 123123;
 
     }
+    public void getGrade(){
+
+
+    }
+    public int addTeacher(String email,String pass1,String pass2,int classRoom){
+        String str="SELECT *FROM add_teacher()?,?,?,?)";
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+            psql.setString(1,email);
+            psql.setString(2,pass1);
+            psql.setString(2,pass2);
+            psql.setInt(2,classRoom);
+
+            ResultSet rs = psql.executeQuery();
+            int mate=0;
+            while(rs.next()){
+                mate=rs.getInt(1);
+
+            }
+            rs.close();
+            st.close();
+
+            return mate;
+        }
+
+        catch(Exception es){
+            es.printStackTrace();
+        }
+        return 3;
+
+    }
+    public void addParrent(){
+
+    }
+    public void addStudent(){
+
+    }
+    public ObservableList<String> getParents(){
+        ArrayList<ParentOb> mate=new ArrayList<>();
+        ObservableList<String> SSS;
+
+        String str="SELECT id,email FROM starsi ";
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+//            psql.setInt(1,id);
+////            psql.setInt(2,prId);
+
+            ResultSet rs = psql.executeQuery();
+            int i=0;
+            while(rs.next()){
+                mate.add(new ParentOb(rs.getString(2),rs.getInt(1)) );
+            }
+            rs.close();
+            st.close();
+            String stdnt;
+            ArrayList<String> sList=new ArrayList<>();
+            for (ParentOb s:mate
+                    ) {
+                stdnt=s.toString(s);
+                sList.add(stdnt);
+            }
+            SSS=FXCollections.observableArrayList(sList);
+
+            return SSS;
+        }
+
+        catch(Exception es){
+            es.printStackTrace();
+        }
+        ArrayList<String> s=new ArrayList<>();
+        return SSS=FXCollections.observableArrayList(s);
+
+    }
+    public ObservableList<String> getStudents(){
+        ArrayList<Student> mate=new ArrayList<>();
+        ObservableList<String> SSS;
+
+        String str="SELECT * FROM ucenci";
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+//            psql.setInt(1,id);
+//            psql.setInt(2,prId);
+
+            ResultSet rs = psql.executeQuery();
+            int i=0;
+            while(rs.next()){
+                StringBuilder stringBuilder=new StringBuilder();
+                stringBuilder.append(rs.getString(3));
+                stringBuilder.append(" ");
+                stringBuilder.append(rs.getString(4));
+                mate.add(new Student(stringBuilder.toString(),rs.getInt(1)) );
+            }
+            rs.close();
+            st.close();
+            String stdnt;
+            ArrayList<String> sList=new ArrayList<>();
+            for (Student s:mate
+                    ) {
+                stdnt=s.toString(s);
+                sList.add(stdnt);
+            }
+            SSS=FXCollections.observableArrayList(sList);
+
+            return SSS;
+        }
+
+        catch(Exception es){
+            es.printStackTrace();
+        }
+        ArrayList<String> s=new ArrayList<>();
+        return SSS=FXCollections.observableArrayList(s);
+
+    }
+    public ObservableList<String> getClasses(int id){
+        ArrayList<Student> mate=new ArrayList<>();
+        ObservableList<String> SSS;
+        String str="SELECT DISTINCT pr.id AS \"first\", pr.ime AS \"seccond\"\n";
+        try(Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
+            Statement st = conn.createStatement();){
+
+            PreparedStatement psql=conn.prepareStatement(str);
+            //psql.setString(1,email);
+            psql.setInt(1,id);
+
+            ResultSet rs = psql.executeQuery();
+            int i=0;
+            while(rs.next()){
+                StringBuilder stringBuilder=new StringBuilder();
+                stringBuilder.append(rs.getString("first"));
+                stringBuilder.append(" ");
+                stringBuilder.append(rs.getString("seccond"));
+                mate.add(new Student(stringBuilder.toString(),rs.getInt(1)) );
+            }
+            rs.close();
+            st.close();
+            String stdnt;
+            //int id;
+            ArrayList<String> sList=new ArrayList<>();
+            for (Student s:mate
+                    ) {
+                stdnt=s.toString(s);
+                sList.add(stdnt);
+            }
+            SSS=FXCollections.observableArrayList(sList);
+            return SSS;
+
+        }
+
+        catch(Exception es){
+            es.printStackTrace();
+        }
+        ArrayList<String> s=new ArrayList<>();
+        return SSS=FXCollections.observableArrayList(s);
+
+    }
+
 }

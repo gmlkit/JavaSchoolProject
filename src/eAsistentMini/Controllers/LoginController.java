@@ -44,7 +44,7 @@ public class LoginController {
                 userField.clear();
 
             }else if(logCheck[0]==0){
-//                AlertBox.display("Success","Parent welcome to my app!");
+//                AlertBox.display("Success","ParentOb welcome to my app!");
                 main.selectedStage(2,logCheck[1]);
                 passwordField.clear();
                 userField.clear();

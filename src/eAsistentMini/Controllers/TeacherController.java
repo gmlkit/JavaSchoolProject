@@ -2,25 +2,15 @@ package eAsistentMini.Controllers;
 
 import eAsistentMini.Logic.AlertBox;
 import eAsistentMini.Logic.DatabaseWork;
-import eAsistentMini.Logic.Objects.Student;
 import eAsistentMini.Main;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.ComboBoxTableCell;
-import javafx.scene.input.ContextMenuEvent;
 
-import javax.security.auth.callback.Callback;
 import java.net.URL;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 public class TeacherController implements Initializable {
@@ -75,7 +65,7 @@ public class TeacherController implements Initializable {
                 "\tINNER JOIN predmeti pr ON pr.id=up.predmet_id \n" +
                 "\tWHERE u.id =?";
 
-        ObservableList<String> classes=dbw.getObjects(userId,strClass);
+        ObservableList<String> classes=dbw.getClasses(userId,strClass);
         classCombo.setItems(classes);
         classCombo.getSelectionModel().selectedItemProperty().addListener((options,oldValue,newValue)->{
 //            String strStudent="SELECT DISTINCT u.*FROM ucenci u \n" +
@@ -94,13 +84,6 @@ public class TeacherController implements Initializable {
                 e.printStackTrace();
             }
         });
-
-
-    }
-
-
-
-    public void initStudents(ContextMenuEvent contextMenuEvent) {
 
 
     }
