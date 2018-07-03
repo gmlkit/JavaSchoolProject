@@ -8,18 +8,6 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseWork {
-    public void testDatabaseConn() {
-        try {
-
-            Class.forName("org.postgresql.Driver");
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("error class not found exception");
-            e.printStackTrace();
-
-        }
-    }
-
     public int[] LogIn(String username, String password) {
 
         int[] logCheck = new int[2];
@@ -260,16 +248,18 @@ public class DatabaseWork {
         return SSS = FXCollections.observableArrayList(s);
 
     }
-    public ObservableList<String> getStudents() {
+    public ObservableList<String> getStudents(int classId) {
         ArrayList<ObjectSet> mate = new ArrayList<>();
         ObservableList<String> SSS;
 
-        String str = "SELECT * FROM ucenci";
+        String str = "SELECT * FROM ucenci u " +
+                "INNER JOIN ucenci_predmeti up ON up.ucenec_id=u.id" +
+                "WHERE up.predmet_id=?";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
              Statement st = conn.createStatement();) {
 
             PreparedStatement psql = conn.prepareStatement(str);
-//            psql.setInt(1,id);
+            psql.setInt(1,classId);
 //            psql.setInt(2,prId);
 
             ResultSet rs = psql.executeQuery();
@@ -300,40 +290,26 @@ public class DatabaseWork {
         return SSS = FXCollections.observableArrayList(s);
 
     }
-    public ObservableList<String> getClasses(int id) {
-        ArrayList<ObjectSet> mate = new ArrayList<>();
+
+    public ObservableList<String> getClasses() {
+        ArrayList<String> mate = new ArrayList<>();
         ObservableList<String> SSS;
-        String str = "SELECT r.id AS \"first\", pr.ime AS \"seccond\" " +
-                "FROM predmeti p " +
-                "INNER JOIN ucitelji_predmeti up ON up.ucitelj_id=p.id " +
-                "WHERE (up.ucitelj_id=?)";
+        String str="SELECT ime FROM predmeti";
         try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
              Statement st = conn.createStatement();) {
 
             PreparedStatement psql = conn.prepareStatement(str);
             //psql.setString(1,email);
-            psql.setInt(1, id);
+            //psql.setInt(1, id);
 
             ResultSet rs = psql.executeQuery();
             int i = 0;
             while (rs.next()) {
-                StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.append(rs.getString("first"));
-                stringBuilder.append(" ");
-                stringBuilder.append(rs.getString("seccond"));
-                mate.add(new ObjectSet(stringBuilder.toString(), rs.getInt(1)));
+                mate.add(rs.getString(1));
             }
             rs.close();
             st.close();
-            String stdnt;
-            //int id;
-            ArrayList<String> sList = new ArrayList<>();
-            for (ObjectSet s : mate
-                    ) {
-                stdnt = s.toString(s);
-                sList.add(stdnt);
-            }
-            SSS = FXCollections.observableArrayList(sList);
+            SSS = FXCollections.observableArrayList(mate);
             return SSS;
 
         } catch (Exception es) {
@@ -341,44 +317,6 @@ public class DatabaseWork {
         }
         ArrayList<String> s = new ArrayList<>();
         return SSS = FXCollections.observableArrayList(s);
-
-    }
-
-    public void addParrent() {
-
-    }
-    public void addStudent() {
-
-    }
-    public void getGrade() {
-
-
-    }
-    public int addTeacher(String email, String pass1, String pass2, int classRoom) {
-        String str = "SELECT *FROM add_teacher()?,?,?,?)";
-        try (Connection conn = DriverManager.getConnection(Conn.URL, Conn.USER, Conn.PASS);
-             Statement st = conn.createStatement();) {
-
-            PreparedStatement psql = conn.prepareStatement(str);
-            psql.setString(1, email);
-            psql.setString(2, pass1);
-            psql.setString(2, pass2);
-            psql.setInt(2, classRoom);
-
-            ResultSet rs = psql.executeQuery();
-            int mate = 0;
-            while (rs.next()) {
-                mate = rs.getInt(1);
-
-            }
-            rs.close();
-            st.close();
-
-            return mate;
-        } catch (Exception es) {
-            es.printStackTrace();
-        }
-        return 3;
 
     }
 }
